@@ -1,0 +1,9 @@
+order_choice:
+    path:     /
+    defaults: { _controller: OCPlatformBundle:Order:choice }
+order_paiement:
+    path:     /paiement
+    defaults: { _controller: OCPlatformBundle:Order:paiement }
+order_confirmation:
+    path:     /confirmation
+    defaults: { _controller: OCPlatformBundle:Order:confirmation }
