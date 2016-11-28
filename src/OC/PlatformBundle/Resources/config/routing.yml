@@ -1,9 +1,11 @@
-order_choice:
+oc_platform_choice:
     path:     /
-    defaults: { _controller: OCPlatformBundle:Order:choice }
-order_paiement:
+    defaults: { _controller: OCPlatformBundle:Reservation:choice }
+
+oc_platform_paiement:
     path:     /paiement
-    defaults: { _controller: OCPlatformBundle:Order:paiement }
-order_confirmation:
+    defaults: { _controller: OCPlatformBundle:Reservation:paiement }
+
+oc_platform_confirmation:
     path:     /confirmation
-    defaults: { _controller: OCPlatformBundle:Order:confirmation }
+    defaults: { _controller: OCPlatformBundle:Reservation:confirmation }

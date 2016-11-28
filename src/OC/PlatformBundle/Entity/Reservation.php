@@ -49,6 +49,15 @@ class Reservation
      */
     private $number;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="dayTime", type="boolean")
+     */
+    private $dayTime;
+
+
+
 
     /**
      * Get id
@@ -132,19 +141,6 @@ class Reservation
         return $this->price;
     }
 
-    /**
-     * Set number
-     *
-     * @param string $number
-     *
-     * @return Reservation
-     */
-    public function setNumber($number)
-    {
-        $this->number = $number;
-
-        return $this;
-    }
 
     /**
      * Get number
@@ -154,6 +150,30 @@ class Reservation
     public function getNumber()
     {
         return $this->number;
+    }
+
+    /**
+     * Set dayTime
+     *
+     * @param boolean $dayTime
+     *
+     * @return Reservation
+     */
+    public function setDayTime($dayTime)
+    {
+        $this->dayTime = $dayTime;
+
+        return $this;
+    }
+
+    /**
+     * Get dayTime
+     *
+     * @return boolean
+     */
+    public function getDayTime()
+    {
+        return $this->dayTime;
     }
 }
 
