@@ -13,6 +13,17 @@ use Doctrine\ORM\Mapping as ORM;
 class Visitor
 {
     /**
+     * @ORM\OneToOne(targetEntity="OC\PlatformBundle\Entity\Ticket")
+     */
+    private $ticket;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="OC\PlatformBundle\Entity\Reservation")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $reservation;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
@@ -56,6 +67,28 @@ class Visitor
      */
     private $reducedPrice;
 
+
+    public function setTicket(Ticket $ticket)
+    {
+        $this->ticket = $ticket;
+    }
+
+    public function getTicket()
+    {
+        return $this->ticket;
+    }
+
+    public function setReservation(Reservation $reservation)
+    {
+        $this->reservation = $reservation;
+
+        return $this;
+    }
+
+    public function getReservation()
+    {
+        return $this->reservation;
+    }
 
     /**
      * Get id

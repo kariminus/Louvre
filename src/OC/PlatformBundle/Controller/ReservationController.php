@@ -4,6 +4,8 @@
 namespace OC\PlatformBundle\Controller;
 
 use OC\PlatformBundle\Entity\Reservation;
+use OC\PlatformBundle\Entity\Visitor;
+use OC\PlatformBundle\Entity\Ticket;
 use OC\PlatformBundle\Form\ReservationType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;

@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Bienvenue sur la billetterie</title>
-</head>
-<body>
-<h1>Confirmation de la commande</h1>
-<a href={{ path('oc_platform_choice') }} class="btn btn-info" role="button">Retour à l'accueil</a>
-</body>
-</html>
+{% extends "OCPlatformBundle::layout.html.twig" %}
+
+{% block ocplatform_body %}
+    <h1>Confirmation de la commande</h1>
+    <a href={{ path('oc_platform_choice') }} class="btn btn-info" role="button">Retour à l'accueil</a>
+{% endblock %}

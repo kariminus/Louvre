@@ -56,6 +56,11 @@ class Reservation
      */
     private $dayTime;
 
+    /**
+     * @ORM\OneToMany(targetEntity="OC\PlatformBundle\Entity\Visitor")
+     */
+    private $visitors;
+
 
 
 
@@ -174,6 +179,33 @@ class Reservation
     public function getDayTime()
     {
         return $this->dayTime;
+    }
+
+
+    /**
+     * @param Visitor $visitor
+     */
+    public function addVisitor(Visitor $visitor)
+    {
+        $this->visitors[] = $visitor;
+        // On lie la reservation au visiteur
+        $visitor->setReservation($this);
+    }
+
+    /**
+     * @param Visitor $visitor
+     */
+    public function removeVisitor(Visitor $visitor)
+    {
+        $this->visitors->removeElement($visitor);
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getVisitors()
+    {
+        return $this->visitors;
     }
 }
 
