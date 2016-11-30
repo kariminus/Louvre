@@ -12,14 +12,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Visitor
 {
-    /**
-     * @ORM\OneToOne(targetEntity="OC\PlatformBundle\Entity\Ticket")
-     */
-    private $ticket;
 
     /**
-     * @ORM\ManyToOne(targetEntity="OC\PlatformBundle\Entity\Reservation")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="OC\PlatformBundle\Entity\Reservation", inversedBy="visitors")
+     * @ORM\JoinColumn()
      */
     private $reservation;
 
@@ -61,21 +57,22 @@ class Visitor
     private $birthDate;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="ticketPrice", type="integer")
+     */
+    private $ticketPrice;
+
+    /**
      * @var \boolean
      *
      * @ORM\Column(name="reducedPrice", type="boolean")
      */
     private $reducedPrice;
 
-
-    public function setTicket(Ticket $ticket)
+    public function __construct()
     {
-        $this->ticket = $ticket;
-    }
-
-    public function getTicket()
-    {
-        return $this->ticket;
+        $this->ticketPrice = 10;
     }
 
     public function setReservation(Reservation $reservation)
@@ -194,6 +191,30 @@ class Visitor
     public function getBirthDate()
     {
         return $this->birthDate;
+    }
+
+    /**
+     * Set ticketPrice
+     *
+     * @param \integer $ticketPrice
+     *
+     * @return Visitor
+     */
+    public function setTicketPrice($ticketPrice)
+    {
+        $this->ticketPrice = $ticketPrice;
+
+        return $this;
+    }
+
+    /**
+     * Get ticketPrice
+     *
+     * @return int
+     */
+    public function getTicketPrice()
+    {
+        return $this->ticketPrice;
     }
 
     /**

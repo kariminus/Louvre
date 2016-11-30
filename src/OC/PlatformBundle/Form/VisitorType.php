@@ -3,7 +3,7 @@
 namespace OC\PlatformBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -20,7 +20,7 @@ class VisitorType extends AbstractType
             ->add('firstName',        TextType::class)
             ->add('lastName',         TextType::class)
             ->add('country',          TextType::class)
-            ->add('birthDate',             DateType::class)
+            ->add('birthDate',        BirthdayType::class)
             ->add('reducedPrice',     CheckboxType::class, array('required' => false));
     }
 

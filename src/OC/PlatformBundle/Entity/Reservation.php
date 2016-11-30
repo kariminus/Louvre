@@ -3,6 +3,8 @@
 namespace OC\PlatformBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
 
 /**
  * Reservation
@@ -57,11 +59,20 @@ class Reservation
     private $dayTime;
 
     /**
-     * @ORM\OneToMany(targetEntity="OC\PlatformBundle\Entity\Visitor")
+     * @ORM\OneToMany(targetEntity="OC\PlatformBundle\Entity\Visitor", cascade={"persist"}, mappedBy="reservation")
      */
     private $visitors;
 
 
+
+    public function __construct()
+    {
+        $this->date         = new \Datetime();
+        $this->visitors     = new ArrayCollection();
+        $this->mail         = "mail@example.com";
+        $this->price        = 100;
+        $this->number       = "ad5a1";
+    }
 
 
     /**

@@ -3,6 +3,8 @@
 {% block ocplatform_body %}
 
 <h1>Paiement</h1>
+    <p>Total à payer: {{ app.session.get('price')}}</p>
+
     <button id="customButton">Purchase</button>
     <script src="https://checkout.stripe.com/checkout.js"></script>
     <script>

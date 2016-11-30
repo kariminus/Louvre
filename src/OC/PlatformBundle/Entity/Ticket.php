@@ -3,6 +3,7 @@
 namespace OC\PlatformBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Ticket
@@ -41,7 +42,6 @@ class Ticket
      * @ORM\Column(name="price", type="integer", unique=true)
      */
     private $price;
-
 
     /**
      * Get id
@@ -124,5 +124,6 @@ class Ticket
     {
         return $this->price;
     }
+
 }
 
