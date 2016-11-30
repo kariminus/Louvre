@@ -3,35 +3,24 @@
 {% block ocplatform_body %}
 
 <h1>Paiement</h1>
-    <p>Total à payer: {{ app.session.get('price')}}</p>
-
-    <button id="customButton">Purchase</button>
-    <script src="https://checkout.stripe.com/checkout.js"></script>
-    <script>
-        var handler = StripeCheckout.configure({
-            key: 'pk_test_CH3XMGiDg4wMTokMYWw5doQp',
-            image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
-            locale: 'auto',
-            token: function(token) {
-                // You can access the token ID with `token.id`.
-                // Get the token ID to your server-side code for use.
-            }
-        });
-
-        document.getElementById('customButton').addEventListener('click', function(e) {
-            // Open Checkout with further options:
-            handler.open({
-                name: 'Demo Site',
-                description: '2 widgets',
-                currency: 'eur',
-                amount: 2000
-            });
-            e.preventDefault();
-        });
-
-        // Close Checkout on page navigation:
-        window.addEventListener('popstate', function() {
-            handler.close();
-        });
-    </script>
+    {% set price = app.session.get('price') %}
+    <div class="nav-space-checkout">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <form action="" method="POST">
+                        <script
+                                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                data-key="{{ stripe_public_key }}"
+                                data-amount= {{ price*100 }}
+                                data-name="Dollar Shear Club"
+                                data-description="Widget"
+                                data-image="http://www.louvre.fr/sites/all/themes/louvre/img/data/logo-louvre.jpg"
+                                data-locale="auto">
+                        </script>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

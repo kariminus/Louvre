@@ -22,9 +22,10 @@ class ReservationController extends controller
 
             $session->set('price',      $reservation->getPrice());
             $session->set('visitors',   $reservation->getVisitors());
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($reservation);
-            $em->flush();
+            //$em->flush();
             return $this->redirectToRoute('oc_platform_paiement');
         }
 
@@ -38,9 +39,23 @@ class ReservationController extends controller
         $session = $request->getSession();
         $date = $session->get('date');
         $price = $session->get('price');
-        $content = $this->get('templating')->render('OCPlatformBundle:Reservation:paiement.html.twig');
 
-        return new Response($content);
+        if ($request->isMethod('POST')) {
+            $token = $request->request->get('stripeToken');
+            \Stripe\Stripe::setApiKey($this->getParameter('stripe_secret_key'));
+            \Stripe\Charge::create(array(
+                "amount" => $price * 100,
+                "currency" => "eur",
+                "source" => $token,
+                "description" => "First test charge!"
+            ));
+            $this->addFlash('success', 'Order Complete! Yay!');
+            return $this->redirectToRoute('oc_platform_confirmation');
+        }
+
+        return $this->render('OCPlatformBundle:Reservation:paiement.html.twig', array(
+            'stripe_public_key' => $this->getParameter('stripe_public_key')
+        ));
 
     }
 
