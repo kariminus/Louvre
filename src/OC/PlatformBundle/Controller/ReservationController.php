@@ -8,11 +8,16 @@ use OC\PlatformBundle\Form\ReservationType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 class ReservationController extends controller
 {
+    /**
+     * @Route("/", name="oc_platform_choice", schemes={"%secure_channel%"})
+     */
     public function choiceAction(Request $request)
     {
+
         $reservation = new Reservation();
 
         $form = $this->get('form.factory')->create(ReservationType::class, $reservation);

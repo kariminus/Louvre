@@ -1,26 +1,83 @@
 {% extends "OCPlatformBundle::layout.html.twig" %}
 
 {% block ocplatform_body %}
-
+    {% block javascripts %}
+        <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+        <script src="https://code.jquery.com/jquery-3.1.0.js"
+                integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="
+                crossorigin="anonymous"></script>
+        <script src="js/jquery.payment.js"></script>
+        <script type="text/javascript">
+            Stripe.setPublishableKey('{{ stripe_public_key }}');
+            $(function () {
+                var $form = $('#payment-form');
+                $form.submit(function (event) {
+                    event.preventDefault();
+                    // Disable the submit button to prevent repeated clicks:
+                    $form.find('.submit').prop('disabled', true);
+                    // Request a token from Stripe:
+                    Stripe.card.createToken($form, stripeResponseHandler);
+                });
+            });
+            function stripeResponseHandler(status, response) {
+                // Grab the form:
+                var $form = $('#payment-form');
+                if (response.error) { // Problem!
+                    // Show the errors on the form:
+                    $form.find('.payment-errors').text(response.error.message);
+                    $form.find('.submit').prop('disabled', false); // Re-enable submission
+                } else { // Token was created!
+                    // Get the token ID:
+                    var token = response.id;
+                    // Insert the token ID into the form so it gets submitted to the server:
+                    $form.append($('<input type="hidden" name="stripeToken">').val(token));
+                    // Submit the form:
+                    $form.get(0).submit();
+                }
+            }
+        </script>
+    {% endblock %}
 <h1>Paiement</h1>
     {% set price = app.session.get('price') %}
-    <div class="nav-space-checkout">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                    <form action="" method="POST">
-                        <script
-                                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                                data-key="{{ stripe_public_key }}"
-                                data-amount= {{ price*100 }}
-                                data-name="Dollar Shear Club"
-                                data-description="Widget"
-                                data-image="http://www.louvre.fr/sites/all/themes/louvre/img/data/logo-louvre.jpg"
-                                data-locale="auto">
-                        </script>
-                    </form>
-                </div>
-            </div>
+    <form action="" method="POST" id="payment-form">
+        <span class="payment-errors"></span>
+        <div class="form-row">
+            <label>
+                <span>Email</span>
+                <input type="email" size="30">
+            </label>
         </div>
-    </div>
+
+        <div class="form-row">
+            <label>
+                <span>Confirmer email</span>
+                <input type="email" size="30">
+            </label>
+        </div>
+
+        <div class="form-row">
+            <label>
+                <span>Card Number</span>
+                <input type="text" size="20" data-stripe="number" id="js-cc-number">
+            </label>
+        </div>
+
+        <div class="form-row">
+            <label>
+                <span>Expiration (MM/YY)</span>
+                <input type="text" size="2" data-stripe="exp_month" id="js-cc-exp">
+            </label>
+            <span> / </span>
+            <input type="text" size="2" data-stripe="exp_year" id="js-cc-exp">
+        </div>
+
+        <div class="form-row">
+            <label>
+                <span>CVC</span>
+                <input type="text" size="4" data-stripe="cvc" id="js-cc-cvc">
+            </label>
+        </div>
+
+        <input type="submit" class="submit" value="Submit Payment">
+    </form>
 {% endblock %}
