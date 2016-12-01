@@ -63,6 +63,10 @@ class Reservation
      */
     private $visitors;
 
+    /**
+     * @ORM\Column(type="string", unique=true, nullable=true)
+     */
+    private $stripeCustomerId;
 
 
     public function __construct()
@@ -195,12 +199,15 @@ class Reservation
 
     /**
      * @param Visitor $visitor
+     *
+     * @return Reservation
      */
     public function addVisitor(Visitor $visitor)
     {
         $this->visitors[] = $visitor;
         // On lie la reservation au visiteur
         $visitor->setReservation($this);
+        return $this;
     }
 
     /**
@@ -212,11 +219,35 @@ class Reservation
     }
 
     /**
+     * Set Visitors
+     *
+     * @param Visitor $visitors
+     *
+     * @return Reservation
+     */
+    public function setVisitor($visitors)
+    {
+        $this->visitors = $visitors;
+
+        return $this;
+    }
+
+    /**
      * @return \Doctrine\Common\Collections\Collection
      */
     public function getVisitors()
     {
         return $this->visitors;
+    }
+
+    public function getStripeCustomerId()
+    {
+        return $this->stripeCustomerId;
+    }
+
+    public function setStripeCustomerId($stripeCustomerId)
+    {
+        $this->stripeCustomerId = $stripeCustomerId;
     }
 }
 

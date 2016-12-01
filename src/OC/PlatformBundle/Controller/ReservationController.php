@@ -13,19 +13,14 @@ class ReservationController extends controller
 {
     public function choiceAction(Request $request)
     {
-        $session = $request->getSession();
-
         $reservation = new Reservation();
 
         $form = $this->get('form.factory')->create(ReservationType::class, $reservation);
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
 
-            $session->set('price',      $reservation->getPrice());
-            $session->set('visitors',   $reservation->getVisitors());
+            $stripePaiement = $this->get('stripe_paiement');
+            $stripePaiement->choicePaiement($request, $reservation);
 
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($reservation);
-            //$em->flush();
             return $this->redirectToRoute('oc_platform_paiement');
         }
 
@@ -36,20 +31,11 @@ class ReservationController extends controller
 
     public function paiementAction (Request $request)
     {
-        $session = $request->getSession();
-        $date = $session->get('date');
-        $price = $session->get('price');
-
         if ($request->isMethod('POST')) {
-            $token = $request->request->get('stripeToken');
-            \Stripe\Stripe::setApiKey($this->getParameter('stripe_secret_key'));
-            \Stripe\Charge::create(array(
-                "amount" => $price * 100,
-                "currency" => "eur",
-                "source" => $token,
-                "description" => "First test charge!"
-            ));
-            $this->addFlash('success', 'Order Complete! Yay!');
+
+            $stripePaiement = $this->get('stripe_paiement');
+            $stripePaiement->chargePaiement($request);
+
             return $this->redirectToRoute('oc_platform_confirmation');
         }
 
