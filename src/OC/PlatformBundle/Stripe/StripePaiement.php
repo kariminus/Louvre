@@ -66,6 +66,7 @@ class StripePaiement
             "currency" => "eur",
             "source" => $token,
         ));
+
         $this->em->persist($reservation);
         $this->em->flush($reservation);
 

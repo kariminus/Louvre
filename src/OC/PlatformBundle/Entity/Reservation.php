@@ -17,9 +17,9 @@ class Reservation
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="id", type="string", length=36)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="UUID")
      */
     private $id;
 
@@ -44,12 +44,6 @@ class Reservation
      */
     private $price;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="number", type="string", length=255)
-     */
-    private $number;
 
     /**
      * @var boolean
@@ -62,11 +56,6 @@ class Reservation
      * @ORM\OneToMany(targetEntity="OC\PlatformBundle\Entity\Visitor", cascade={"persist"}, mappedBy="reservation")
      */
     private $visitors;
-
-    /**
-     * @ORM\Column(type="string", unique=true, nullable=true)
-     */
-    private $stripeCustomerId;
 
 
     public function __construct()
@@ -237,16 +226,6 @@ class Reservation
     public function getVisitors()
     {
         return $this->visitors;
-    }
-
-    public function getStripeCustomerId()
-    {
-        return $this->stripeCustomerId;
-    }
-
-    public function setStripeCustomerId($stripeCustomerId)
-    {
-        $this->stripeCustomerId = $stripeCustomerId;
     }
 }
 
