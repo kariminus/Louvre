@@ -15,7 +15,7 @@ class Visitor
 
     /**
      * @ORM\ManyToOne(targetEntity="OC\PlatformBundle\Entity\Reservation", inversedBy="visitors")
-     * @ORM\JoinColumn()
+     * @ORM\JoinColumn(nullable=false)
      */
     private $reservation;
 
@@ -73,18 +73,6 @@ class Visitor
     public function __construct()
     {
         $this->ticketPrice = 0;
-    }
-
-    public function setReservation(Reservation $reservation)
-    {
-        $this->reservation = $reservation;
-
-        return $this;
-    }
-
-    public function getReservation()
-    {
-        return $this->reservation;
     }
 
     /**
@@ -239,6 +227,23 @@ class Visitor
     public function getReducedPrice()
     {
         return $this->reducedPrice;
+    }
+
+    /**
+     * @param Reservation $reservation
+     */
+    public function setReservation(Reservation $reservation)
+    {
+        $this->reservation = $reservation;
+
+    }
+
+    /**
+     * @return Reservation
+     */
+    public function getReservation()
+    {
+        return $this->reservation;
     }
 
 }

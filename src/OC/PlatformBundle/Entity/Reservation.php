@@ -53,7 +53,7 @@ class Reservation
     private $dayTime;
 
     /**
-     * @ORM\OneToMany(targetEntity="OC\PlatformBundle\Entity\Visitor", cascade={"persist"}, mappedBy="reservation")
+     * @ORM\OneToMany(targetEntity="OC\PlatformBundle\Entity\Visitor", cascade={"persist", "remove"}, mappedBy="reservation")
      */
     private $visitors;
 
@@ -63,7 +63,6 @@ class Reservation
         $this->date         = new \Datetime();
         $this->visitors     = new ArrayCollection();
         $this->mail         = "mail@example.com";
-        $this->number       = "ad5a1";
     }
 
 
@@ -151,16 +150,6 @@ class Reservation
 
 
     /**
-     * Get number
-     *
-     * @return string
-     */
-    public function getNumber()
-    {
-        return $this->number;
-    }
-
-    /**
      * Set dayTime
      *
      * @param boolean $dayTime
@@ -184,40 +173,20 @@ class Reservation
         return $this->dayTime;
     }
 
-
     /**
      * @param Visitor $visitor
-     *
-     * @return Reservation
      */
     public function addVisitor(Visitor $visitor)
     {
         $this->visitors[] = $visitor;
-        // On lie la reservation au visiteur
         $visitor->setReservation($this);
-        return $this;
     }
-
     /**
      * @param Visitor $visitor
      */
     public function removeVisitor(Visitor $visitor)
     {
         $this->visitors->removeElement($visitor);
-    }
-
-    /**
-     * Set Visitors
-     *
-     * @param Visitor $visitors
-     *
-     * @return Reservation
-     */
-    public function setVisitor($visitors)
-    {
-        $this->visitors = $visitors;
-
-        return $this;
     }
 
     /**

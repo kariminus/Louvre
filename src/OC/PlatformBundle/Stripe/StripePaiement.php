@@ -27,6 +27,7 @@ class StripePaiement
 
         foreach ($visitors as $visitor)
         {
+            $visitor->setReservation($reservation);
             $today = new\DateTime();
             $birth = $visitor->getBirthDate();
             $interval = date_diff($today, $birth);
@@ -69,8 +70,6 @@ class StripePaiement
 
         $this->em->persist($reservation);
         $this->em->flush($reservation);
-
-        return $reservation;
     }
 
 }
