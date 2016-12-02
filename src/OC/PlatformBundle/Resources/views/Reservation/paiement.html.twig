@@ -39,19 +39,20 @@
     {% endblock %}
 <h1>Paiement</h1>
     {% set price = app.session.get('price') %}
+    <p>Total à payer : {{ price }} </p>
     <form action="" method="POST" id="payment-form">
         <span class="payment-errors"></span>
         <div class="form-row">
             <label>
                 <span>Email</span>
-                <input type="email" size="30">
+                <input name="email" type="email" size="30">
             </label>
         </div>
 
         <div class="form-row">
             <label>
                 <span>Confirmer email</span>
-                <input type="email" size="30">
+                <input name="confirm" type="email" size="30">
             </label>
         </div>
 

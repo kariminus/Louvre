@@ -21,23 +21,50 @@ class StripePaiement
         $session = $request->getSession();
 
         $session->set('reservation',  $reservation);
-        $session->set('price',        $reservation->getPrice());
         $session->set('visitors',     $reservation->getVisitors());
+        $visitors = $session->get('visitors');
+        $price = 0;
 
+        foreach ($visitors as $visitor)
+        {
+            $today = new\DateTime();
+            $birth = $visitor->getBirthDate();
+            $interval = date_diff($today, $birth);
+            $age = $interval->y;
+            if ($age < 4)
+            {
+                $visitor->setTicketPrice(0);
+            }
+            elseif ($age > 4 && $age < 12)
+            {
+                $visitor->setTicketPrice(8);
+            }
+            elseif ($age > 60)
+            {
+                $visitor->setTicketPrice(12);
+            }
+            else
+            {
+                $visitor->setTicketPrice(16);
+            }
+            $price += $visitor->getTicketPrice();
+        }
+        $reservation->setPrice($price);
+        $session->set('price',  $price);
     }
+
 
     public function chargePaiement (Request $request)
     {
         $session = $request->getSession();
         $reservation = $session->get('reservation');
         $token = $request->request->get('stripeToken');
-        $price = $reservation->getPrice();
+        $price = $session->get('price');
 
         \Stripe\Charge::create(array(
             "amount" => $price * 100,
             "currency" => "eur",
             "source" => $token,
-            "description" => "First test charge!"
         ));
         $this->em->persist($reservation);
         $this->em->flush($reservation);

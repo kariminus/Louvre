@@ -74,7 +74,6 @@ class Reservation
         $this->date         = new \Datetime();
         $this->visitors     = new ArrayCollection();
         $this->mail         = "mail@example.com";
-        $this->price        = 1;
         $this->number       = "ad5a1";
     }
 

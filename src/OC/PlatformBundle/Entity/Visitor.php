@@ -72,7 +72,7 @@ class Visitor
 
     public function __construct()
     {
-        $this->ticketPrice = 10;
+        $this->ticketPrice = 0;
     }
 
     public function setReservation(Reservation $reservation)
