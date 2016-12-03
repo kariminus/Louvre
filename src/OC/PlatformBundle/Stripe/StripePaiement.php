@@ -19,7 +19,6 @@ class StripePaiement
     public function choicePaiement (Request $request, Reservation $reservation)
     {
         $session = $request->getSession();
-
         $session->set('reservation',  $reservation);
         $session->set('visitors',     $reservation->getVisitors());
         $visitors = $session->get('visitors');
@@ -59,6 +58,8 @@ class StripePaiement
     {
         $session = $request->getSession();
         $reservation = $session->get('reservation');
+        $email=$request->get("email");
+        $reservation->setMail($email);
         $token = $request->request->get('stripeToken');
         $price = $session->get('price');
 
@@ -70,6 +71,8 @@ class StripePaiement
 
         $this->em->persist($reservation);
         $this->em->flush($reservation);
+
+        $session->clear();
     }
 
 }

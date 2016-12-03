@@ -62,7 +62,7 @@ class Reservation
     {
         $this->date         = new \Datetime();
         $this->visitors     = new ArrayCollection();
-        $this->mail         = "mail@example.com";
+        //$this->mail         = "mail@example.com";
     }
 
 
@@ -173,21 +173,7 @@ class Reservation
         return $this->dayTime;
     }
 
-    /**
-     * @param Visitor $visitor
-     */
-    public function addVisitor(Visitor $visitor)
-    {
-        $this->visitors[] = $visitor;
-        $visitor->setReservation($this);
-    }
-    /**
-     * @param Visitor $visitor
-     */
-    public function removeVisitor(Visitor $visitor)
-    {
-        $this->visitors->removeElement($visitor);
-    }
+
 
     /**
      * @return \Doctrine\Common\Collections\Collection
