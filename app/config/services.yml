@@ -1,5 +1,2 @@
-services:
-    stripe_paiement:
-        class: OC\PlatformBundle\Stripe\StripePaiement
-        autowire: true
-        arguments: ["%stripe_secret_key%"]
+
+

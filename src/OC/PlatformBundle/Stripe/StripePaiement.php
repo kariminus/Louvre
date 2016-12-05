@@ -58,7 +58,7 @@ class StripePaiement
     {
         $session = $request->getSession();
         $reservation = $session->get('reservation');
-        $email=$request->get("email");
+        $email=$request->get('email');
         $reservation->setMail($email);
         $token = $request->request->get('stripeToken');
         $price = $session->get('price');
@@ -73,6 +73,7 @@ class StripePaiement
         $this->em->flush($reservation);
 
         $session->clear();
+
     }
 
 }

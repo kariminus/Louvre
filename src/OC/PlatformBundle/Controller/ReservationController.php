@@ -54,8 +54,8 @@ class ReservationController extends controller
     {
         $session = $request->getSession();
         $visitors = $session->get('visitors');
-        $content = $this->get('templating')->render('OCPlatformBundle:Reservation:confirmation.html.twig');
 
+        $content = $this->get('templating')->render('OCPlatformBundle:Reservation:confirmation.html.twig');
         return new Response($content);
 
     }
