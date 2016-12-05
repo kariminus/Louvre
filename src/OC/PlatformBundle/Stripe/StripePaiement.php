@@ -77,7 +77,7 @@ class StripePaiement
         $this->em->persist($reservation);
         $this->em->flush($reservation);
 
-        $session->clear();
+        //$session->clear();
 
     }
 

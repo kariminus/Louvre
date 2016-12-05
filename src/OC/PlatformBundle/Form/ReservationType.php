@@ -18,7 +18,11 @@ class ReservationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('date',       DateType::class)
+            ->add('date',       DateType::class, array (
+                'widget' => 'single_text',
+                'html5' => false,
+                'attr' => ['class' => 'js-datepicker'],
+            ))
             ->add('dayTime',    CheckboxType::class, array('required' => false))
             ->add('visitors',   CollectionType::class, array(
                 'entry_type'    => VisitorType::class,

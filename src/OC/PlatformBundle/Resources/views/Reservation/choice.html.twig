@@ -29,7 +29,11 @@
     {{ form_end(form) }}
 </div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https:ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/locales/bootstrap-datepicker.fr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/locales/bootstrap-datepicker.en.min.js"></script>
+
 <script type="text/javascript">
     $(document).ready(function() {
         // On récupère la balise <div> en question qui contient l'attribut « data-prototype » qui nous intéresse.
@@ -95,6 +99,15 @@
                 return false;
             });
         }
+    });
+</script>
+<script>
+    $(".js-datepicker").datepicker({
+        format: "dd/mm/yyyy",
+        weekStart: 1,
+        daysOfWeekDisabled: "7",
+        language: "fr",
+        datesDisabled: ['01/05/2017', '01/11/2017', '25/12/2016']
     });
 </script>
 {% endblock %}

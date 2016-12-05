@@ -60,7 +60,7 @@ class Reservation
 
     public function __construct()
     {
-        $this->date         = new \Datetime();
+        //$this->date         = new \Datetime();
         $this->visitors     = new ArrayCollection();
         //$this->mail         = "mail@example.com";
     }
