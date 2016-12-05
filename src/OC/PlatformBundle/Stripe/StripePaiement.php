@@ -31,7 +31,12 @@ class StripePaiement
             $birth = $visitor->getBirthDate();
             $interval = date_diff($today, $birth);
             $age = $interval->y;
-            if ($age < 4)
+            $reducedPrice = $visitor->getReducedPrice();
+            if ($reducedPrice === true)
+            {
+                $visitor->setTicketPrice(10);
+            }
+            elseif ($age < 4)
             {
                 $visitor->setTicketPrice(0);
             }
