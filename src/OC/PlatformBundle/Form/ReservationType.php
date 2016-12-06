@@ -21,6 +21,7 @@ class ReservationType extends AbstractType
             ->add('date',       DateType::class, array (
                 'widget' => 'single_text',
                 'html5' => false,
+                'format' => 'dd/MM/yyyy',
                 'attr' => ['class' => 'js-datepicker'],
             ))
             ->add('dayTime',    CheckboxType::class, array('required' => false))
