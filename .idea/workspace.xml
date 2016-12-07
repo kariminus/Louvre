@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="08cedb2c-5787-4361-909d-719a80103976" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OC/PlatformBundle/Controller/ReservationController.php" afterPath="$PROJECT_DIR$/src/OC/PlatformBundle/Controller/ReservationController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OC/PlatformBundle/Entity/Reservation.php" afterPath="$PROJECT_DIR$/src/OC/PlatformBundle/Entity/Reservation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OC/PlatformBundle/Entity/Visitor.php" afterPath="$PROJECT_DIR$/src/OC/PlatformBundle/Entity/Visitor.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OC/PlatformBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/OC/PlatformBundle/Resources/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OC/PlatformBundle/Resources/views/Reservation/confirmation.html.twig" afterPath="$PROJECT_DIR$/src/OC/PlatformBundle/Resources/views/Reservation/confirmation.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OC/PlatformBundle/Resources/views/Reservation/paiement.html.twig" afterPath="$PROJECT_DIR$/src/OC/PlatformBundle/Resources/views/Reservation/paiement.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OC/PlatformBundle/Price/SetPrice.php" afterPath="$PROJECT_DIR$/src/OC/PlatformBundle/Price/SetPrice.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OC/PlatformBundle/Stripe/StripePaiement.php" afterPath="$PROJECT_DIR$/src/OC/PlatformBundle/Stripe/StripePaiement.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="StripePaiement.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StripePaiement.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/Stripe/StripePaiement.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1188">
-              <caret line="36" column="28" lean-forward="false" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+            <state relative-caret-position="1089">
+              <caret line="33" column="41" lean-forward="false" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
               <folding>
                 <element signature="e#44#85#0#PHP" expanded="true" />
               </folding>
@@ -91,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SetPrice.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SetPrice.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/Price/SetPrice.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="19" column="39" lean-forward="true" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+            <state relative-caret-position="914">
+              <caret line="33" column="44" lean-forward="false" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
               <folding>
                 <element signature="e#43#84#0#PHP" expanded="true" />
               </folding>
@@ -116,8 +111,8 @@
       <file leaf-file-name="ReservationController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/Controller/ReservationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1023">
-              <caret line="37" column="53" lean-forward="false" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
+            <state relative-caret-position="947">
+              <caret line="42" column="12" lean-forward="false" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
               <folding>
                 <element signature="e#49#90#0#PHP" expanded="true" />
               </folding>
@@ -184,8 +179,8 @@
         <option value="$PROJECT_DIR$/src/OC/PlatformBundle/Entity/Reservation.php" />
         <option value="$PROJECT_DIR$/src/OC/PlatformBundle/Price/SetTicketPrice.php" />
         <option value="$PROJECT_DIR$/src/OC/PlatformBundle/Resources/config/services.yml" />
-        <option value="$PROJECT_DIR$/src/OC/PlatformBundle/Price/SetPrice.php" />
         <option value="$PROJECT_DIR$/src/OC/PlatformBundle/DoctrineListener/ReservationCreationListener.php" />
+        <option value="$PROJECT_DIR$/src/OC/PlatformBundle/Price/SetPrice.php" />
         <option value="$PROJECT_DIR$/src/OC/PlatformBundle/Controller/ReservationController.php" />
         <option value="$PROJECT_DIR$/src/OC/PlatformBundle/Stripe/StripePaiement.php" />
       </list>
@@ -708,15 +703,15 @@
       <workItem from="1481027226452" duration="1206000" />
       <workItem from="1481036371968" duration="3652000" />
       <workItem from="1481099224149" duration="8726000" />
-      <workItem from="1481111084601" duration="70000" />
+      <workItem from="1481111084601" duration="3058000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152354000" />
+    <option name="totallyTimeSpent" value="155342000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-13" y="-13" width="3866" height="2106" extended-state="0" />
+    <frame x="-13" y="-13" width="3866" height="2106" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -993,16 +988,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/Controller/ReservationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1023">
-          <caret line="37" column="53" lean-forward="false" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
-          <folding>
-            <element signature="e#49#90#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/Resources/views/Reservation/paiement.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -1016,16 +1001,6 @@
         <state relative-caret-position="198">
           <caret line="6" column="37" lean-forward="false" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/Stripe/StripePaiement.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1188">
-          <caret line="36" column="28" lean-forward="false" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
-          <folding>
-            <element signature="e#44#85#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1047,10 +1022,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/Price/SetPrice.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="19" column="39" lean-forward="true" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+        <state relative-caret-position="914">
+          <caret line="33" column="44" lean-forward="false" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
           <folding>
             <element signature="e#43#84#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/Controller/ReservationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="947">
+          <caret line="42" column="12" lean-forward="false" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+          <folding>
+            <element signature="e#49#90#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/Stripe/StripePaiement.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1089">
+          <caret line="33" column="41" lean-forward="false" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+          <folding>
+            <element signature="e#44#85#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

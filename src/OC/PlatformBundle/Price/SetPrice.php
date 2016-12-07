@@ -33,11 +33,11 @@ class SetPrice {
             {
                 $visitor->setTicketPrice(0);
             }
-            elseif ($age > 4 && $age < 12)
+            elseif ($age >= 4 && $age < 12)
             {
                 $visitor->setTicketPrice(8);
             }
-            elseif ($age > 60)
+            elseif ($age >= 60)
             {
                 $visitor->setTicketPrice(12);
             }

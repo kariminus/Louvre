@@ -32,7 +32,7 @@ class StripePaiement
         ));
 
         $this->em->persist($reservation);
-        $this->em->flush($reservation);
+        $this->em->flush();
 
         //$session->clear();
     }
