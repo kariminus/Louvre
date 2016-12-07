@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class ReservationController extends controller
 {
@@ -23,8 +24,8 @@ class ReservationController extends controller
         $form = $this->get('form.factory')->create(ReservationType::class, $reservation);
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
 
-            $stripePaiement = $this->get('stripe_paiement');
-            $stripePaiement->choicePaiement($request, $reservation);
+            $setPrice = $this->get('set_price');
+            $setPrice->choicePaiement($reservation);
 
             return $this->redirectToRoute('oc_platform_paiement');
         }
@@ -55,8 +56,9 @@ class ReservationController extends controller
         $session = $request->getSession();
         $visitors = $session->get('visitors');
 
-        $content = $this->get('templating')->render('OCPlatformBundle:Reservation:confirmation.html.twig');
-        return new Response($content);
+        return $this->render('OCPlatformBundle:Reservation:confirmation.html.twig', array(
+        'visitors' => $visitors
+        ));
 
     }
 }

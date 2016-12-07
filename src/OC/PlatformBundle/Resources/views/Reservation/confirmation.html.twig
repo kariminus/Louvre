@@ -3,11 +3,10 @@
 {% block ocplatform_body %}
     <h1>Confirmation de la commande</h1>
 
-    {% set visitors = app.session.get('visitors') %}
     <ul>
         {% for visitor in visitors %}
             <li>
-                {{ visitor.firstName }} {{ visitor.lastName }}
+                {{ visitor.firstName }} {{ visitor.lastName }} {{ visitor.ticketPrice}}
             </li>
         {% endfor %}
     </ul>

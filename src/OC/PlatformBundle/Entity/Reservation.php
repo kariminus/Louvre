@@ -81,13 +81,10 @@ class Reservation
      *
      * @param string $mail
      *
-     * @return Reservation
      */
     public function setMail($mail)
     {
         $this->mail = $mail;
-
-        return $this;
     }
 
     /**
@@ -105,13 +102,10 @@ class Reservation
      *
      * @param \DateTime $date
      *
-     * @return Reservation
      */
     public function setDate($date)
     {
         $this->date = $date;
-
-        return $this;
     }
 
     /**
@@ -128,14 +122,10 @@ class Reservation
      * Set price
      *
      * @param integer $price
-     *
-     * @return Reservation
      */
     public function setPrice($price)
     {
         $this->price = $price;
-
-        return $this;
     }
 
     /**
@@ -154,13 +144,10 @@ class Reservation
      *
      * @param boolean $dayTime
      *
-     * @return Reservation
      */
     public function setDayTime($dayTime)
     {
         $this->dayTime = $dayTime;
-
-        return $this;
     }
 
     /**

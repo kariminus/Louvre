@@ -4,10 +4,14 @@ services:
             autowire: true
             arguments: ["%stripe_secret_key%"]
 
+    set_price:
+                class: OC\PlatformBundle\Price\SetPrice
+
     oc_platform.email.send_mail:
           class: OC\PlatformBundle\Mail\SendMail
           arguments:
               - "@mailer"
+
     oc_platform.doctrine_listener.reservation_creation:
         class: OC\PlatformBundle\DoctrineListener\ReservationCreationListener
         arguments:

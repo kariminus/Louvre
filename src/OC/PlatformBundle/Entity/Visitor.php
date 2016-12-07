@@ -90,13 +90,10 @@ class Visitor
      *
      * @param string $firstName
      *
-     * @return Visitor
      */
     public function setFirstName($firstName)
     {
         $this->firstName = $firstName;
-
-        return $this;
     }
 
     /**
@@ -114,13 +111,10 @@ class Visitor
      *
      * @param string $lastName
      *
-     * @return Visitor
      */
     public function setLastName($lastName)
     {
         $this->lastName = $lastName;
-
-        return $this;
     }
 
     /**
@@ -138,13 +132,10 @@ class Visitor
      *
      * @param string $country
      *
-     * @return Visitor
      */
     public function setCountry($country)
     {
         $this->country = $country;
-
-        return $this;
     }
 
     /**
@@ -162,13 +153,10 @@ class Visitor
      *
      * @param \DateTime $birthDate
      *
-     * @return Visitor
      */
     public function setBirthDate($birthDate)
     {
         $this->birthDate = $birthDate;
-
-        return $this;
     }
 
     /**
@@ -186,13 +174,11 @@ class Visitor
      *
      * @param \integer $ticketPrice
      *
-     * @return Visitor
      */
     public function setTicketPrice($ticketPrice)
     {
         $this->ticketPrice = $ticketPrice;
 
-        return $this;
     }
 
     /**
@@ -210,13 +196,10 @@ class Visitor
      *
      * @param \boolean $reducedPrice
      *
-     * @return Visitor
      */
     public function setReducedPrice($reducedPrice)
     {
         $this->reducedPrice = $reducedPrice;
-
-        return $this;
     }
 
     /**
