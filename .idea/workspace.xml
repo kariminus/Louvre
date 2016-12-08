@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="08cedb2c-5787-4361-909d-719a80103976" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OC/PlatformBundle/DoctrineListener/ReservationCreationListener.php" afterPath="$PROJECT_DIR$/src/OC/PlatformBundle/DoctrineListener/ReservationCreationListener.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OC/PlatformBundle/Resources/views/Reservation/choice.html.twig" afterPath="$PROJECT_DIR$/src/OC/PlatformBundle/Resources/views/Reservation/choice.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OC/PlatformBundle/Resources/views/Reservation/paiement.html.twig" afterPath="$PROJECT_DIR$/src/OC/PlatformBundle/Resources/views/Reservation/paiement.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="paiement.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="paiement.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/Resources/views/Reservation/paiement.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="16" column="68" lean-forward="false" selection-start-line="16" selection-start-column="68" selection-end-line="16" selection-end-column="68" />
+            <state relative-caret-position="-670">
+              <caret line="23" column="78" lean-forward="false" selection-start-line="23" selection-start-column="78" selection-end-line="23" selection-end-column="78" />
               <folding />
             </state>
           </provider>
@@ -63,11 +65,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="choice.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="choice.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/Resources/views/Reservation/choice.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2564">
-              <caret line="88" column="84" lean-forward="false" selection-start-line="88" selection-start-column="84" selection-end-line="88" selection-end-column="84" />
+            <state relative-caret-position="1475">
+              <caret line="109" column="78" lean-forward="false" selection-start-line="109" selection-start-column="78" selection-end-line="109" selection-end-column="78" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReservationCreationListener.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/DoctrineListener/ReservationCreationListener.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="429">
+              <caret line="15" column="51" lean-forward="false" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReservationType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/Form/ReservationType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="24" column="55" lean-forward="false" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -154,12 +176,12 @@
         <option value="$PROJECT_DIR$/src/OC/PlatformBundle/Entity/Reservation.php" />
         <option value="$PROJECT_DIR$/src/OC/PlatformBundle/Price/SetTicketPrice.php" />
         <option value="$PROJECT_DIR$/src/OC/PlatformBundle/Resources/config/services.yml" />
-        <option value="$PROJECT_DIR$/src/OC/PlatformBundle/DoctrineListener/ReservationCreationListener.php" />
         <option value="$PROJECT_DIR$/src/OC/PlatformBundle/Controller/ReservationController.php" />
         <option value="$PROJECT_DIR$/src/OC/PlatformBundle/Price/SetPrice.php" />
         <option value="$PROJECT_DIR$/src/OC/PlatformBundle/Stripe/StripePaiement.php" />
-        <option value="$PROJECT_DIR$/src/OC/PlatformBundle/Resources/views/Reservation/choice.html.twig" />
+        <option value="$PROJECT_DIR$/src/OC/PlatformBundle/DoctrineListener/ReservationCreationListener.php" />
         <option value="$PROJECT_DIR$/src/OC/PlatformBundle/Resources/views/Reservation/paiement.html.twig" />
+        <option value="$PROJECT_DIR$/src/OC/PlatformBundle/Resources/views/Reservation/choice.html.twig" />
       </list>
     </option>
   </component>
@@ -683,12 +705,12 @@
       <workItem from="1481111084601" duration="3058000" />
       <workItem from="1481186302058" duration="9000" />
       <workItem from="1481186352323" duration="16000" />
-      <workItem from="1481186454029" duration="3904000" />
+      <workItem from="1481186454029" duration="8896000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159271000" />
+    <option name="totallyTimeSpent" value="164263000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3866" height="2106" extended-state="6" />
@@ -919,16 +941,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/DoctrineListener/ReservationCreationListener.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="26" column="9" lean-forward="false" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
-          <folding>
-            <element signature="e#54#111#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/Entity/Ticket.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3993">
@@ -953,34 +965,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/Resources/views/Reservation/confirmation.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="6" column="37" lean-forward="false" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/Mail/SendMail.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="693">
           <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/Form/ReservationType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="23" column="41" lean-forward="false" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/Resources/views/Reservation/choice.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2564">
-          <caret line="88" column="84" lean-forward="false" selection-start-line="88" selection-start-column="84" selection-end-line="88" selection-end-column="84" />
           <folding />
         </state>
       </provider>
@@ -1023,10 +1011,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/Form/ReservationType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="24" column="55" lean-forward="false" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/DoctrineListener/ReservationCreationListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="15" column="51" lean-forward="false" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/Resources/views/Reservation/confirmation.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="6" column="37" lean-forward="false" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/Resources/views/Reservation/paiement.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="16" column="68" lean-forward="false" selection-start-line="16" selection-start-column="68" selection-end-line="16" selection-end-column="68" />
+        <state relative-caret-position="-670">
+          <caret line="23" column="78" lean-forward="false" selection-start-line="23" selection-start-column="78" selection-end-line="23" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OC/PlatformBundle/Resources/views/Reservation/choice.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1475">
+          <caret line="109" column="78" lean-forward="false" selection-start-line="109" selection-start-column="78" selection-end-line="109" selection-end-column="78" />
           <folding />
         </state>
       </provider>
