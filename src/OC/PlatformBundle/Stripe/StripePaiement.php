@@ -35,6 +35,7 @@ class StripePaiement
         $this->em->flush();
 
         //$session->clear();
+
     }
 
 }
