@@ -2,58 +2,18 @@
 
 {% block ocplatform_body %}
     {% block javascripts %}
-        <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+        <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
         <script src="http://stripe.github.io/jquery.payment/lib/jquery.payment.js"></script>
-        <script type="text/javascript">
-            Stripe.setPublishableKey("{{ stripe_public_key }}");
-            $(function () {
-                var $form = $("#payment-form");
-                $(".cc-number").payment("formatCardNumber");
-                $(".cc-exp").payment("formatCardExpiry");
-                $(".cc-cvc").payment("formatCardCVC");
-
-                $form.submit(function (event) {
-                    event.preventDefault();
-                    if ($("#email").val() !== $("#confirm").val()) {
-                        $(".error_email").append("<p>Les emails ne correspondent pas</p>");
-                        //alert("Attention, les mails ne correspondent pas !");
-                        //return false;
-                    }
-                    else {
-                        // Disable the submit button to prevent repeated clicks:
-                        $form.find(".submit").prop("disabled", true);
-                        // Request a token from Stripe:
-                        Stripe.card.createToken($form, stripeResponseHandler);
-                        // Prevent the form from being submitted:
-                        return false;
-                    }
-                });
-            });
-            function stripeResponseHandler(status, response) {
-                // Grab the form:
-                var $form = $("#payment-form");
-                if (response.error) { // Problem!
-                    // Show the errors on the form:
-                    $form.find(".payment-errors").text(response.error.message);
-                    $form.find(".submit").prop("disabled", false); // Re-enable submission
-                } else { // Token was created!
-                    // Get the token ID:
-                    var token = response.id;
-                    // Insert the token ID into the form so it gets submitted to the server:
-                    $form.append($('<input type="hidden" name="stripeToken">').val(token));
-                    // Submit the form:
-                    $form.get(0).submit();
-                }
-            }
-        </script>
+        <script type="text/javascript">Stripe.setPublishableKey("{{ stripe_public_key }}");</script>
+        <script src="{{ asset('js/stripe.js') }}"></script>
     {% endblock %}
 <h1>Paiement</h1>
     {% set price = app.session.get('price') %}
     <p>Total à payer : {{ price }} </p>
     <form action="" method="POST" id="payment-form">
         <span class="payment-errors"></span>
-        <div class="form-group error_email">
+        <div class="form-group">
             <label for="email" class="control-label">Email</label>
             <input id="email" name ="email" class="input-lg form-control" type="email" size="30">
         </div>

@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    background-color: #222;
+}
+
+.container-fluid {
+    background-color: #802929;
+}
+
+#content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+}
+.form-style {
+    background-color: #222;
+    color : #fff;
+}
+
+.form-horizontal .form-group {
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0 15px;
+}
+
+#reservation_visitors .form-group {
+    padding: 0;
+}
+
+#add_visitor {
+    margin-left: 15px;
+}
+.btn {
+    margin-bottom: 10px;
+}
+
+
+
