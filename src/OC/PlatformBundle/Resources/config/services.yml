@@ -1,16 +1,16 @@
 services:
     stripe_paiement:
-            class: OC\PlatformBundle\Stripe\StripePaiement
-            autowire: true
-            arguments: ["%stripe_secret_key%"]
+          class: OC\PlatformBundle\Stripe\StripePaiement
+          autowire: true
+          arguments: ["%stripe_secret_key%"]
 
     set_price:
-                class: OC\PlatformBundle\Price\SetPrice
+          class: OC\PlatformBundle\Price\SetPrice
 
     oc_platform.email.send_mail:
-          class: OC\PlatformBundle\Mail\SendMail
-          arguments:
-              - "@mailer"
+        class: OC\PlatformBundle\Mail\SendMail
+        arguments:
+          - "@mailer"
 
     oc_platform.doctrine_listener.reservation_creation:
         class: OC\PlatformBundle\DoctrineListener\ReservationCreationListener
@@ -18,3 +18,9 @@ services:
           - "@oc_platform.email.send_mail"
         tags:
           - { name: doctrine.event_listener, event: postPersist }
+
+    oc_platform.validator.reservationlimit:
+            class: OC\PlatformBundle\Validator\ReservationLimitValidator
+            arguments: ["@doctrine.orm.entity_manager"]
+            tags:
+                - { name: validator.constraint_validator }

@@ -10,7 +10,9 @@
     {% endblock %}
 <h1>Paiement</h1>
     {% set price = app.session.get('price') %}
+    {% set reservationNumber = app.session.get('reservationNumber') %}
     <p>Total à payer : {{ price }} </p>
+    <p>Nombre : {{ reservationNumber }}</p>
     <form action="" method="POST" id="payment-form">
         <span class="payment-errors"></span>
         <div class="form-group">

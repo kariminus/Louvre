@@ -8,9 +8,7 @@ body {
 }
 
 #content {
-    margin-left: auto;
-    margin-right: auto;
-    width: 800px;
+
 }
 .form-style {
     background-color: #222;
@@ -32,6 +30,13 @@ body {
 }
 .btn {
     margin-bottom: 10px;
+}
+
+.ticket {
+    color: #fff;
+    min-height: 200px;
+    border: solid 1px #222;
+    margin: 10px 5px;
 }
 
 

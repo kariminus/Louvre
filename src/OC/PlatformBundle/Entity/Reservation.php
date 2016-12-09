@@ -4,6 +4,7 @@ namespace OC\PlatformBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use OC\PlatformBundle\Validator\ReservationLimit;
 
 
 /**
@@ -34,6 +35,8 @@ class Reservation
      * @var \DateTime
      *
      * @ORM\Column(name="date", type="date")
+     *
+     * @ReservationLimit()
      */
     private $date;
 

@@ -27,6 +27,7 @@ class ReservationController extends controller
         $reservation = new Reservation();
 
         $form = $this->get('form.factory')->create(ReservationType::class, $reservation);
+
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
 
             $setPrice = $this->get('set_price');

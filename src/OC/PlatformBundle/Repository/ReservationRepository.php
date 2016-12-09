@@ -2,6 +2,9 @@
 
 namespace OC\PlatformBundle\Repository;
 
+use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\QueryBuilder;
+
 /**
  * ReservationRepository
  *
@@ -10,4 +13,17 @@ namespace OC\PlatformBundle\Repository;
  */
 class ReservationRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findByDate($date)
+    {
+        $qb = $this->createQueryBuilder('r');
+
+        $qb->where('r.date = :date')
+            ->setParameter('date', $date)
+        ;
+
+        return $qb
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 }
