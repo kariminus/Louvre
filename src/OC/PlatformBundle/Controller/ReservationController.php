@@ -13,6 +13,11 @@ use Symfony\Component\HttpFoundation\Session\Session;
 
 class ReservationController extends controller
 {
+    public function indexAction ()
+    {
+        return $this->render('OCPlatformBundle:Reservation:index.html.twig');
+    }
+
     /**
      * @Route("/", name="oc_platform_choice", schemes={"%secure_channel%"})
      */

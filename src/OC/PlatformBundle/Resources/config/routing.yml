@@ -1,11 +1,19 @@
-oc_platform_choice:
+oc_platform_index:
     path:     /
-    defaults: { _controller: OCPlatformBundle:Reservation:choice }
+    defaults:
+        _controller: OCPlatformBundle:Reservation:index
+
+oc_platform_choice:
+    path:     /billetterie
+    defaults:
+        _controller: OCPlatformBundle:Reservation:choice
 
 oc_platform_paiement:
     path:     /paiement
-    defaults: { _controller: OCPlatformBundle:Reservation:paiement }
+    defaults:
+        _controller: OCPlatformBundle:Reservation:paiement
 
 oc_platform_confirmation:
     path:     /confirmation
-    defaults: { _controller: OCPlatformBundle:Reservation:confirmation }
+    defaults:
+        _controller: OCPlatformBundle:Reservation:confirmation
