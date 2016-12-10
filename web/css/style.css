@@ -4,15 +4,22 @@ body {
 }
 
 .container-fluid {
-    background-color: #802929;
+    background-color: #fff;
+    min-height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 #content {
-
+    width: 80%;
+}
+.price {
+    font-size: 48pt;
+    color: #993333;
 }
 .form-style {
-    background-color: #222;
-    color : #fff;
+    color : #222;
+    margin: 20px 0;
 }
 
 .form-horizontal .form-group {
@@ -33,10 +40,18 @@ body {
 }
 
 .ticket {
-    color: #fff;
-    min-height: 200px;
+    color: #222;
+    min-height: 300px;
     border: solid 1px #222;
     margin: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.description {
+    height: 80px;
 }
 
 

@@ -7,7 +7,7 @@
     <title>{% block title %}Billetterie du Louvre{% endblock %}</title>
 
     {% block stylesheets %}
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
     {% endblock %}
@@ -15,25 +15,13 @@
 
 <body>
 <header>
-<img src="{{ asset('images/logo.jpg') }}">
+    <p class="text-center"><a href="{{ path('oc_platform_index') }}"><img src="{{ asset('images/logo.jpg') }}"></a></p>
 </header>
-<div class="full">
 <div class="container-fluid">
-        <div id="content">
+    <div id="content">
             {% block body %}
             {% endblock %}
-        </div>
+    </div>
 </div>
-    <hr>
-
-    <footer>
-        <p>Musée du Louvre</p>
-    </footer>
-</div>
-{% block javascripts %}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-{% endblock %}
-
 </body>
 </html>
