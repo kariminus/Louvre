@@ -15,14 +15,14 @@ class SetPrice {
         $session->set('reservation',  $reservation);
         $session->set('visitors',     $reservation->getVisitors());
         $visitors = $session->get('visitors');
+        $date = $reservation->getDate();
         $price = 0;
 
         foreach ($visitors as $visitor)
         {
             $visitor->setReservation($reservation);
-            $today = new\DateTime();
             $birth = $visitor->getBirthDate();
-            $interval = date_diff($today, $birth);
+            $interval = date_diff($date, $birth);
             $age = $interval->y;
             $reducedPrice = $visitor->getReducedPrice();
             if ($reducedPrice === true)

@@ -1,0 +1,33 @@
+ticket:
+    normal:
+        name: Normal price
+        description: Starting at 16 years old
+    child:
+        name: Child price
+        description: From 4 to 12 years old
+    senior:
+        name: Senior price
+        description: Starting at 60 years old
+    reduced:
+        name: Reduced price
+        description: For students, Employees of the museum, Military...
+date: Date
+visitors: Visitors
+firstName: First Name
+lastName: Last Name
+country: Country
+birthDate: Birth date
+reducedPrice: reduced price
+dayTime: Half day
+save: Submit
+reservation:
+    email: Mail
+    confirm: Mail confirmation
+paiement:
+    number: Card number
+    expiration: Expiration date
+    cvc: Security code (back of your card)
+bouton:
+    reservation: Reserve
+    delete: Delete
+    add: Add a visitor

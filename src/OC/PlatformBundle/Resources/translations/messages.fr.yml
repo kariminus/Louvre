@@ -1,0 +1,34 @@
+ticket:
+    normal:
+        name: Tarif normal
+        description: A partir de 16 ans
+    child:
+        name: Tarif enfant
+        description: De 4 à 12 ans
+    senior:
+        name: Tarif sénior
+        description: A partir de 60 ans
+    reduced:
+        name: Tarif réduit
+        description: Pour les étudiants, Employés du musée, Militaires...
+date: Date
+visitors: Visiteurs
+firstName: Prénom
+lastName: Nom
+country: Pays
+birthDate: Date de naissance
+reducedPrice: Tarif réduit
+dayTime: Demi-journée
+save: Valider
+reservation:
+    email: Email
+    confirm: Confirmation de l'email
+paiement:
+    number: Numéro de votre carte
+    expiration: Date d'expiration
+    cvc: Code de sécurité (au dos de votre carte)
+bouton:
+    reservation: Réservez
+    delete: Supprimer
+    add: Ajouter un visiteur
+    save: Valider

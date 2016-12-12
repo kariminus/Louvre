@@ -23,14 +23,19 @@ class ReservationType extends AbstractType
                 'html5' => false,
                 'format' => 'dd/MM/yyyy',
                 'attr' => ['class' => 'js-datepicker'],
+                'label_format' => '%name%',
             ))
-            ->add('dayTime',    CheckboxType::class, array('required' => false))
+            ->add('dayTime',    CheckboxType::class, array(
+                'required' => false,
+                'label_format' => '%name%',
+            ))
             ->add('visitors',   CollectionType::class, array(
                 'entry_type'    => VisitorType::class,
                 'allow_add'     => true,
-                'allow_delete'  => true
+                'allow_delete'  => true,
+                'label_format' => '%name%',
             ))
-            ->add('save',      SubmitType::class);
+            ->add('save',      SubmitType::class, ['label_format' => '%name%',]);
 
     }
     

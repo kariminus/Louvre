@@ -5,6 +5,7 @@ namespace OC\PlatformBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use OC\PlatformBundle\Validator\ReservationLimit;
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 /**
@@ -28,6 +29,7 @@ class Reservation
      * @var string
      *
      * @ORM\Column(name="mail", type="string", length=255)
+     *
      */
     private $mail;
 
@@ -35,6 +37,8 @@ class Reservation
      * @var \DateTime
      *
      * @ORM\Column(name="date", type="date")
+     *
+     * @Assert\Date()
      *
      * @ReservationLimit()
      */
@@ -63,9 +67,7 @@ class Reservation
 
     public function __construct()
     {
-        //$this->date         = new \Datetime();
         $this->visitors     = new ArrayCollection();
-        //$this->mail         = "mail@example.com";
     }
 
 

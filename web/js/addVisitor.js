@@ -29,7 +29,7 @@ $(document).ready(function() {
         // - le texte "__name__label__" qu'il contient par le label du champ
         // - le texte "__name__" qu'il contient par le numéro du champ
         var template = $container.attr('data-prototype')
-                .replace(/__name__label__/g, 'Visiteur n°' + (index+1))
+                .replace(/__name__label__/g, 'n°' + (index+1))
                 .replace(/__name__/g,        index)
             ;
 

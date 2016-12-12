@@ -16,7 +16,7 @@
     {{ form_row(form.dayTime) }}
 
     {{ form_row(form.visitors) }}
-    <a href="#" id="add_visitor" class="btn btn-default">Ajouter un visiteur</a>
+    <a href="#" id="add_visitor" class="btn btn-default">{{ 'bouton.add'|trans }}</a>
 
     {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
     {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}

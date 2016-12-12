@@ -6,34 +6,34 @@
         <div class="col-md-2"></div>
         <div class="col-md-2 ticket">
             <div class="description">
-            <p>Tarif normal</p>
-            <p>A partir de 16 ans</p>
+            <p>{{ 'ticket.normal.name'|trans }}</p>
+            <p>{{ 'ticket.normal.description'|trans }}</p>
             </div>
             <div class="price">16 €</div>
         </div>
         <div class="col-md-2 ticket">
             <div class="description">
-            <p>Tarif enfant</p>
-            <p>De 4 à 12 ans</p>
+            <p>{{ 'ticket.child.name'|trans }}</p>
+            <p>{{ 'ticket.child.description'|trans }}</p>
             </div>
             <div class="price">8 €</div>
         </div>
         <div class="col-md-2 ticket">
             <div class="description">
-            <p>Tarif sénior</p>
-            <p>A partir de 60 ans</p>
+            <p>{{ 'ticket.senior.name'|trans }}</p>
+            <p>{{ 'ticket.senior.description'|trans }}</p>
             </div>
             <div class="price">12 €</div>
         </div>
         <div class="col-md-2 ticket">
             <div class="description">
-            <p>Tarif réduit</p>
-            <p>étudiants, employés du musée, militaires...</p>
+            <p>{{ 'ticket.reduced.name'|trans }}</p>
+            <p>{{ 'ticket.reduced.description'|trans }}</p>
             </div>
             <div class="price">10 €</div>
         </div>
     </div>
 <div class="text-center">
-    <a href="{{ path('oc_platform_choice') }}" class="btn btn-default">Réservation</a>
+    <a href="{{ path('oc_platform_choice') }}" class="btn btn-default">{{ 'bouton.reservation'|trans }}</a>
 </div>
 {% endblock %}
