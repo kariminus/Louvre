@@ -1,3 +1,8 @@
+title:
+    choice: Choose your ticket
+    confirmation: Confirmation of your order
+    index: Ticketing
+    payment: Payment
 ticket:
     normal:
         name: Normal price
@@ -11,6 +16,7 @@ ticket:
     reduced:
         name: Reduced price
         description: For students, Employees of the museum, Military...
+total: Total to pay
 date: Date
 visitors: Visitors
 firstName: First Name

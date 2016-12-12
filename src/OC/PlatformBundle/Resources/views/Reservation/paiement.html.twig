@@ -1,5 +1,9 @@
 {% extends "OCPlatformBundle::layout.html.twig" %}
 
+{% block title %}
+    Paiement - {{ parent() }}
+{% endblock %}
+
 {% block ocplatform_body %}
     {% block javascripts %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
@@ -10,9 +14,9 @@
     {% endblock %}
     <div class="col-md-3"></div>
     <div class="col-md-6">
-<h1>Paiement</h1>
+    <h1 class="text-center">{{ 'title.payment'|trans }}</h1>
     {% set price = app.session.get('price') %}
-    <p>Total à payer : {{ price }} </p>
+    <p>{{ 'total'|trans }} : {{ price }} </p>
     <form action="" method="POST" id="payment-form">
         <span class="payment-errors"></span>
         <div class="form-group">

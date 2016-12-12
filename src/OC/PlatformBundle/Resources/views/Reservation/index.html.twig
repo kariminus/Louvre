@@ -1,8 +1,12 @@
 {% extends "OCPlatformBundle::layout.html.twig" %}
 
+{% block title %}
+    Accueil - {{ parent() }}
+{% endblock %}
+
 {% block ocplatform_body %}
     <div class="row text-center">
-        <h1>Billetterie</h1>
+        <h1>{{ 'title.index'|trans }}</h1>
         <div class="col-md-2"></div>
         <div class="col-md-2 ticket">
             <div class="description">

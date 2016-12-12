@@ -1,3 +1,8 @@
+title:
+    choice: Choix du billet
+    confirmation: Confirmation de la commande
+    index: Billetterie
+    payment: Paiement
 ticket:
     normal:
         name: Tarif normal
@@ -11,6 +16,7 @@ ticket:
     reduced:
         name: Tarif réduit
         description: Pour les étudiants, Employés du musée, Militaires...
+total: Total à payer
 date: Date
 visitors: Visiteurs
 firstName: Prénom

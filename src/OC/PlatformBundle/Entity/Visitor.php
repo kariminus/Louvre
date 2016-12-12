@@ -94,6 +94,8 @@ class Visitor
     public function setFirstName($firstName)
     {
         $this->firstName = $firstName;
+
+        return $this->firstName;
     }
 
     /**
@@ -115,6 +117,8 @@ class Visitor
     public function setLastName($lastName)
     {
         $this->lastName = $lastName;
+
+        return $this->lastName;
     }
 
     /**
@@ -136,6 +140,8 @@ class Visitor
     public function setCountry($country)
     {
         $this->country = $country;
+
+        return $this->country;
     }
 
     /**
@@ -157,6 +163,8 @@ class Visitor
     public function setBirthDate($birthDate)
     {
         $this->birthDate = $birthDate;
+
+        return $this->birthDate;
     }
 
     /**
@@ -179,6 +187,8 @@ class Visitor
     {
         $this->ticketPrice = $ticketPrice;
 
+        return $this->ticketPrice;
+
     }
 
     /**
@@ -200,6 +210,8 @@ class Visitor
     public function setReducedPrice($reducedPrice)
     {
         $this->reducedPrice = $reducedPrice;
+
+        return $this->reducedPrice;
     }
 
     /**
