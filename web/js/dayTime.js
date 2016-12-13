@@ -5,8 +5,6 @@ $(document).ready(function() {
             hours = newDate.getHours(),
             today = newDate.toLocaleDateString(),
             date = $("#reservation_date").val();
-        console.log(newDate);
-        console.log(hours);
         if (date == today && hours >= 14) {
 
         $("#reservation_dayTime").prop("checked", true);
@@ -18,5 +16,4 @@ $(document).ready(function() {
             $("#reservation_dayTime").prop("required", false);
         }
     });
-
 });

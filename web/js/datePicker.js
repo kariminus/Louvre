@@ -1,9 +1,12 @@
 $(document).ready(function() {
-
     $(".js-datepicker").datepicker({
         format: "dd/mm/yyyy",
         startDate: "0",
         daysOfWeekDisabled: "2",
-        datesDisabled: ['01/05/2017', '25/12/2016', '01/05/2018', '25/12/2017']
+        beforeShowDay: function (date) {
+            if ( ((date.getDate()== 25) && (date.getMonth()== 11)) || ((date.getDate()== 1) && (date.getMonth()== 4)) || ((date.getDate()== 1) && (date.getMonth()== 10))) {
+                return false;
+            }
+        }
     });
 });
