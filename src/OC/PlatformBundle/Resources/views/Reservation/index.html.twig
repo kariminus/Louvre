@@ -8,36 +8,36 @@
     <div class="row text-center">
         <h1>{{ 'title.index'|trans }}</h1>
         <div class="col-md-2"></div>
-        <div class="col-md-2 ticket">
+        <div class="col-md-offset-2 col-md-2 ticket">
             <div class="description">
-            <p>{{ 'ticket.normal.name'|trans }}</p>
-            <p>{{ 'ticket.normal.description'|trans }}</p>
+                <p>{{ 'ticket.normal.name'|trans }}</p>
+                <p>{{ 'ticket.normal.description'|trans }}</p>
             </div>
             <div class="price">16 €</div>
         </div>
         <div class="col-md-2 ticket">
             <div class="description">
-            <p>{{ 'ticket.child.name'|trans }}</p>
-            <p>{{ 'ticket.child.description'|trans }}</p>
+                <p>{{ 'ticket.child.name'|trans }}</p>
+                <p>{{ 'ticket.child.description'|trans }}</p>
             </div>
             <div class="price">8 €</div>
         </div>
         <div class="col-md-2 ticket">
             <div class="description">
-            <p>{{ 'ticket.senior.name'|trans }}</p>
-            <p>{{ 'ticket.senior.description'|trans }}</p>
+                <p>{{ 'ticket.senior.name'|trans }}</p>
+                <p>{{ 'ticket.senior.description'|trans }}</p>
             </div>
             <div class="price">12 €</div>
         </div>
         <div class="col-md-2 ticket">
             <div class="description">
-            <p>{{ 'ticket.reduced.name'|trans }}</p>
-            <p>{{ 'ticket.reduced.description'|trans }}</p>
+                <p>{{ 'ticket.reduced.name'|trans }}</p>
+                <p>{{ 'ticket.reduced.description'|trans }}</p>
             </div>
             <div class="price">10 €</div>
         </div>
     </div>
-<div class="text-center">
-    <a href="{{ path('oc_platform_choice') }}" class="btn btn-default">{{ 'bouton.reservation'|trans }}</a>
-</div>
+    <div class="text-center">
+        <a href="{{ path('oc_platform_choice') }}" class="btn btn-default">{{ 'bouton.reservation'|trans }}</a>
+    </div>
 {% endblock %}

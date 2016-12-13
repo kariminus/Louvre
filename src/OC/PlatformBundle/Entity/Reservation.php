@@ -67,7 +67,7 @@ class Reservation
 
     public function __construct()
     {
-        $this->visitors     = new ArrayCollection();
+        $this->visitors = new ArrayCollection();
     }
 
 
@@ -172,7 +172,6 @@ class Reservation
     {
         return $this->dayTime;
     }
-
 
 
     /**

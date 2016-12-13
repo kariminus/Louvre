@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Session\Session;
 
 class ReservationController extends controller
 {
-    public function indexAction ()
+    public function indexAction()
     {
         return $this->render('OCPlatformBundle:Reservation:index.html.twig');
     }
@@ -41,7 +41,7 @@ class ReservationController extends controller
         ));
     }
 
-    public function paiementAction (Request $request)
+    public function paiementAction(Request $request)
     {
         if ($request->isMethod('POST')) {
 
@@ -57,13 +57,13 @@ class ReservationController extends controller
 
     }
 
-    public function confirmationAction (Request $request)
+    public function confirmationAction(Request $request)
     {
         $session = $request->getSession();
         $visitors = $session->get('visitors');
 
         return $this->render('OCPlatformBundle:Reservation:confirmation.html.twig', array(
-        'visitors' => $visitors
+            'visitors' => $visitors
         ));
 
     }

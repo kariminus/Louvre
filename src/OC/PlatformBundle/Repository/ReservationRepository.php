@@ -18,12 +18,10 @@ class ReservationRepository extends \Doctrine\ORM\EntityRepository
         $qb = $this->createQueryBuilder('r');
 
         $qb->where('r.date = :date')
-            ->setParameter('date', $date)
-        ;
+            ->setParameter('date', $date);
 
         return $qb
             ->getQuery()
-            ->getResult()
-            ;
+            ->getResult();
     }
 }

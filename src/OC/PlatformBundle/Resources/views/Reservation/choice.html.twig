@@ -5,42 +5,40 @@
 {% endblock %}
 
 {% block ocplatform_body %}
-<div class="row">
-    <h1 class="text-center">{{ 'title.choice'|trans }}</h1>
-    <div class="col-md-3"></div>
-<div class="form-style col-md-6">
-    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+    <script type="text/javascript">
+        var deleteButton = '{{ 'bouton.delete'|trans }}';
+    </script>
+    <div class="row">
+        <h1 class="text-center">{{ 'title.choice'|trans }}</h1>
+        <div class="col-md-3"></div>
+        <div class="form-style col-md-6">
+            {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
 
-    {# Les erreurs générales du formulaire. #}
-    {{ form_errors(form) }}
+            {# Les erreurs générales du formulaire. #}
+            {{ form_errors(form) }}
 
-    {# Génération du label + error + widget pour un champ. #}
-    {{ form_row(form.date) }}
+            {# Génération du label + error + widget pour un champ. #}
+            {{ form_row(form.date) }}
 
 
-    {{ form_row(form.dayTime) }}
+            {{ form_row(form.dayTime) }}
 
-    {{ form_row(form.visitors) }}
-    <a href="#" id="add_visitor" class="btn btn-default">{{ 'bouton.add'|trans }}</a>
+            {{ form_row(form.visitors) }}
+            <a href="#" id="add_visitor" class="btn btn-default">{{ 'bouton.add'|trans }}</a>
 
-    {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
-    {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+            {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
+            {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
 
-    {# Génération automatique des champs pas encore écrits.
-       Dans cet exemple, ce serait le champ CSRF (géré automatiquement par Symfony !)
-       et tous les champs cachés (type « hidden »). #}
-    {{ form_rest(form) }}
+            {# Génération automatique des champs pas encore écrits.
+               Dans cet exemple, ce serait le champ CSRF (géré automatiquement par Symfony !)
+               et tous les champs cachés (type « hidden »). #}
+            {{ form_rest(form) }}
 
-    {# Fermeture de la balise <form> du formulaire HTML #}
-    {{ form_end(form) }}
-</div>
-</div>
-<script src="https:ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
-<script src="{{ asset('js/addVisitor.js') }}"></script>
-<script src="{{ asset('js/dayTime.js') }}"></script>
-<script src="{{ asset('js/datePicker.js') }}"></script>
-<script>
-
-</script>
+            {# Fermeture de la balise <form> du formulaire HTML #}
+            {{ form_end(form) }}
+        </div>
+    </div>
+    <script src="https:ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+    <script src="{{ asset('js/scripts.min.js') }}"></script>
 {% endblock %}

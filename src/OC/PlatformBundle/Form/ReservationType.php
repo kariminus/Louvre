@@ -18,27 +18,27 @@ class ReservationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('date',       DateType::class, array (
+            ->add('date', DateType::class, array(
                 'widget' => 'single_text',
                 'html5' => false,
                 'format' => 'dd/MM/yyyy',
                 'attr' => ['class' => 'js-datepicker'],
                 'label_format' => '%name%',
             ))
-            ->add('dayTime',    CheckboxType::class, array(
+            ->add('dayTime', CheckboxType::class, array(
                 'required' => false,
                 'label_format' => '%name%',
             ))
-            ->add('visitors',   CollectionType::class, array(
-                'entry_type'    => VisitorType::class,
-                'allow_add'     => true,
-                'allow_delete'  => true,
+            ->add('visitors', CollectionType::class, array(
+                'entry_type' => VisitorType::class,
+                'allow_add' => true,
+                'allow_delete' => true,
                 'label_format' => '%name%',
             ))
-            ->add('save',      SubmitType::class, ['label_format' => '%name%',]);
+            ->add('save', SubmitType::class, ['label_format' => '%name%',]);
 
     }
-    
+
     /**
      * {@inheritdoc}
      */

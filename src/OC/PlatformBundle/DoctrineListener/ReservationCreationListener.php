@@ -26,6 +26,6 @@ class ReservationCreationListener
             return;
         }
 
-        //$this->sendMail->sendNewMail($entity);
+        $this->sendMail->sendNewMail($entity);
     }
 }

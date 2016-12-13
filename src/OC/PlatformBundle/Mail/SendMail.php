@@ -12,23 +12,47 @@ class SendMail
      */
     private $mailer;
 
-    public function __construct(\Swift_Mailer $mailer)
+    protected $twig;
+
+    public function __construct(\Twig_Environment $twig, \Swift_Mailer $mailer )
     {
+        $this->twig = $twig;
         $this->mailer = $mailer;
     }
 
     public function sendNewMail(Reservation $reservation)
     {
-        $message = new \Swift_Message(
-            'Nouvelle commande'
-        );
+        $number= $reservation->getId();
+        $date= $reservation->getDate();
+        $price= $reservation->getPrice();
+        $visitors= $reservation->getVisitors();
 
-        $message
-            ->addTo($reservation->getMail())
-            ->addFrom('admin@votresite.com')
+        $body = $this->renderTemplate($reservation);
+
+        $message = \Swift_Message::newInstance()
+            ->setSubject('Confirmation de votre commande')
+            ->setFrom('admin@votresite.com')
+            ->setTo($reservation->getMail())
+            ->setBody($body,
+                'text/html'
+                )
         ;
 
+
         $this->mailer->send($message);
+    }
+
+    public function renderTemplate($reservation)
+    {
+        return $this->twig->render(
+            'Emails/email.html.twig',
+            array(
+                'number' => $reservation->getId(),
+                'date'   => $reservation->getDate(),
+                'price'   => $reservation->getPrice(),
+                'visitors'   => $reservation->getVisitors()
+            )
+        );
     }
 
 }

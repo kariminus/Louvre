@@ -6,15 +6,15 @@
 
 {% block ocplatform_body %}
     <div class="col-md-3"></div>
-        <div class="col-md-6">
-    <h1>{{ 'title.confirmation'|trans }}</h1>
+    <div class="col-md-6">
+        <h1>{{ 'title.confirmation'|trans }}</h1>
 
-    <ul>
-        {% for visitor in visitors %}
-            <li>
-                {{ visitor.firstName }} {{ visitor.lastName }} {{ visitor.ticketPrice}}
-            </li>
-        {% endfor %}
-    </ul>
+        <ul>
+            {% for visitor in visitors %}
+                <li>
+                    {{ visitor.firstName }} {{ visitor.lastName }} {{ visitor.ticketPrice }}
+                </li>
+            {% endfor %}
+        </ul>
     </div>
 {% endblock %}

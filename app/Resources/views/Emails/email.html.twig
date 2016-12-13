@@ -1,6 +1,22 @@
-<h3>You did it! You registered!</h3>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
-Thanks!
+<body>
+<h3>Confirmation de votre commande n° {{ number }} pour un total de {{ price }} €</h3>
 
-{# Makes an absolute URL to the /images/logo.png file #}
-<img src="{{ absolute_url(asset('images/logo.png')) }}">
+<p>Votre ticket est valable pour le {{ date|date("d/m/Y") }} pour les visiteurs suivant :</p>
+<ul>
+    {% for visitor in visitors %}
+        <li>
+            {{ visitor.firstName }} {{ visitor.lastName }}
+        </li>
+    {% endfor %}
+</ul>
+
+<img src="{{ (asset('images/logo.jpg')) }}">
+</body>
+</html>

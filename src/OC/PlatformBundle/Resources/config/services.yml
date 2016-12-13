@@ -10,7 +10,8 @@ services:
     oc_platform.email.send_mail:
         class: OC\PlatformBundle\Mail\SendMail
         arguments:
-          - "@mailer"
+            templating: "@twig"
+            mailer: "@mailer"
 
     oc_platform.doctrine_listener.reservation_creation:
         class: OC\PlatformBundle\DoctrineListener\ReservationCreationListener

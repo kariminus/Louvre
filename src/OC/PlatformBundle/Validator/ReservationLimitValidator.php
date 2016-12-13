@@ -11,7 +11,8 @@ class ReservationLimitValidator extends ConstraintValidator
 
     private $em;
 
-    public function __construct(EntityManager $em) { // i guess it's EntityManager the type
+    public function __construct(EntityManager $em)
+    { // i guess it's EntityManager the type
         $this->em = $em;
     }
 
@@ -22,8 +23,7 @@ class ReservationLimitValidator extends ConstraintValidator
         $listReservations = $repository->FindByDate($value);
         $number = count($listReservations);
 
-        if ($number >= 1000)
-        {
+        if ($number >= 1000) {
             $this->context->buildViolation($constraint->message)
                 ->addViolation();
         }
