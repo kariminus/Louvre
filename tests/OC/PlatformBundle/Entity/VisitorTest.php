@@ -9,49 +9,49 @@ class VisitorTest extends \PHPUnit_Framework_TestCase
     public function testFirstName()
     {
         $visitor = new Visitor();
-        $firstName = $visitor->setFirstName("karim");
+        $visitor->setFirstName("karim");
 
-        $this->assertEquals("karim", $firstName);
+        $this->assertEquals("karim", $visitor->getFirstName());
     }
 
     public function testLastName()
     {
         $visitor = new Visitor();
-        $lastName = $visitor->setLastName("meciel");
+        $visitor->setLastName("meciel");
 
-        $this->assertEquals("meciel", $lastName);
+        $this->assertEquals("meciel", $visitor->getLastName());
     }
 
     public function testSetCountry()
     {
         $visitor = new Visitor();
-        $country = $visitor->setCountry("france");
+        $visitor->setCountry("france");
 
-        $this->assertEquals("france", $country);
+        $this->assertEquals("france", $visitor->getCountry());
     }
 
     public function testSetBirthDate()
     {
         $visitor = new Visitor();
         $now = new \DateTime();
-        $birthDate = $visitor->setBirthDate($now);
+        $visitor->setBirthDate($now);
 
-        $this->assertEquals($now, $birthDate);
+        $this->assertEquals($now, $visitor->getBirthDate());
     }
 
     public function testSetTicketPrice()
     {
         $visitor = new Visitor();
-        $ticketPrice = $visitor->setTicketPrice(10);
+        $visitor->setTicketPrice(10);
 
-        $this->assertEquals(10, $ticketPrice);
+        $this->assertEquals(10, $visitor->getTicketPrice());
     }
 
     public function testSetReducedPrice()
     {
         $visitor = new Visitor();
-        $reducedPrice = $visitor->setReducedPrice(true);
+        $visitor->setReducedPrice(true);
 
-        $this->assertEquals(true, $reducedPrice);
+        $this->assertEquals(true, $visitor->getReducedPrice());
     }
 }

@@ -4,12 +4,16 @@
     Choix - {{ parent() }}
 {% endblock %}
 
+{% block h1 %}
+    <h1 class=""text-center> {{ 'title.choice'|trans }} </h1>
+{% endblock %}
+
 {% block ocplatform_body %}
     <script type="text/javascript">
         var deleteButton = '{{ 'bouton.delete'|trans }}';
     </script>
     <div class="row">
-        <h1 class="text-center">{{ 'title.choice'|trans }}</h1>
+        <h1 class="text-center"></h1>
         <div class="col-md-3"></div>
         <div class="form-style col-md-6">
             {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}

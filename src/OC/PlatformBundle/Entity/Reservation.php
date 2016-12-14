@@ -91,7 +91,6 @@ class Reservation
     {
         $this->mail = $mail;
 
-        return $this->mail;
     }
 
     /**
@@ -114,7 +113,6 @@ class Reservation
     {
         $this->date = $date;
 
-        return $this->date;
     }
 
     /**
@@ -135,8 +133,6 @@ class Reservation
     public function setPrice($price)
     {
         $this->price = $price;
-
-        return $this->price;
     }
 
     /**
@@ -160,7 +156,6 @@ class Reservation
     {
         $this->dayTime = $dayTime;
 
-        return $this->dayTime;
     }
 
     /**

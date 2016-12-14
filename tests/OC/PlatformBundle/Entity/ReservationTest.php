@@ -9,33 +9,33 @@ class ReservationTest extends \PHPUnit_Framework_TestCase
     public function testSetMail()
     {
         $reservation = new Reservation();
-        $mail = $reservation->setMail("test@mail.com");
+        $reservation->setMail("test@mail.com");
 
-        $this->assertEquals("test@mail.com", $mail);
+        $this->assertEquals("test@mail.com", $reservation->getMail());
     }
 
     public function testSetPrice()
     {
         $reservation = new Reservation();
-        $price = $reservation->setPrice(10);
+        $reservation->setPrice(10);
 
-        $this->assertEquals(10, $price);
+        $this->assertEquals(10, $reservation->getPrice());
     }
 
     public function testSetDate()
     {
         $reservation = new Reservation();
         $now = new \DateTime();
-        $date = $reservation->setDate($now);
+        $reservation->setDate($now);
 
-        $this->assertEquals($now, $date);
+        $this->assertEquals($now, $reservation->getDate());
     }
 
     public function testSetDayTime()
     {
         $reservation = new Reservation();
-        $dayTime = $reservation->setDayTime(true);
+        $reservation->setDayTime(true);
 
-        $this->assertEquals(true, $dayTime);
+        $this->assertEquals(true, $reservation->getDayTime());
     }
 }
