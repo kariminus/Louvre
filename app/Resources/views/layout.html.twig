@@ -8,21 +8,26 @@
 
     {% block stylesheets %}
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css">
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
     {% endblock %}
 </head>
 
 <body>
 <header>
-    <p class="text-center"><a href="{{ path('oc_platform_index') }}"><img src="{{ asset('images/logo.jpg') }}"></a></p>
+    <p class="text-center">
+        <a href="{{ path('oc_platform_index') }}"><img src="{{ asset('images/logo.jpg') }}"></a>
+        <a class="language" href="{{ path('oc_platform_index', {_locale: 'fr'}) }}">FR</a>
+        <a class="language" href="{{ path('oc_platform_index', {_locale: 'en'}) }}">EN</a>
+    </p>
 </header>
 <div class="container-fluid">
     {% block h1 %}
     {% endblock %}
     <div id="content">
-            {% block body %}
-            {% endblock %}
+        {% block body %}
+        {% endblock %}
     </div>
 </div>
 </body>
