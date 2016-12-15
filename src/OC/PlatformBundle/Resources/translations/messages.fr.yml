@@ -16,6 +16,7 @@ ticket:
     reduced:
         name: Tarif réduit
         description: Pour les étudiants, Employés du musée, Militaires...
+    price: Prix du ticket
 total: Total à payer
 date: Date
 visitors: Visiteurs
@@ -38,3 +39,4 @@ bouton:
     delete: Supprimer
     add: Ajouter un visiteur
     save: Valider
+    home: Retour à l'accueil

@@ -61,9 +61,11 @@ class ReservationController extends controller
     {
         $session = $request->getSession();
         $visitors = $session->get('visitors');
+        $price = $session->get('price');
 
         return $this->render('OCPlatformBundle:Reservation:confirmation.html.twig', array(
-            'visitors' => $visitors
+            'visitors' => $visitors,
+            'price' => $price
         ));
 
     }

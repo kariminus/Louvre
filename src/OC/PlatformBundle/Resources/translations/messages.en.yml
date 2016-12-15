@@ -16,6 +16,7 @@ ticket:
     reduced:
         name: Reduced price
         description: For students, Employees of the museum, Military...
+    price: Ticket price
 total: Total to pay
 date: Date
 visitors: Visitors
@@ -37,3 +38,4 @@ bouton:
     reservation: Reserve
     delete: Delete
     add: Add a visitor
+    home: Back to homepage
