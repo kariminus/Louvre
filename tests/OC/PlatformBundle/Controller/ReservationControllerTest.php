@@ -14,12 +14,10 @@ class ReservationControllerTest extends WebTestCase
 
         $form = $crawler->selectButton('reservation_save')->form();
 
-        $form['reservation[date]']      = "11/12/2016";
-        $form['reservation[dayTime]']    = false;
+        $form['reservation[date]'] = '20/12/2016';
+        $form['reservation[dayTime]'] = false;
 
-
-
-        $crawler = $client->submit($form);
+        $client->submit($form);
 
 
     }
