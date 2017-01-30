@@ -21,6 +21,11 @@
     {% set price = app.session.get('price') %}
     <p>{{ 'total'|trans }} : {{ price }} </p>
     <form action="" method="POST" id="payment-form">
+        <div class="row">
+            <div class="col-xs-8 col-sm-6 col-sm-offset-2 text-center">
+                <div class="alert alert-danger  {{ error ? '' : 'hidden' }}">{{ error }}</div>
+            </div>
+        </div>
         <span class="payment-errors"></span>
         <div class="form-group">
             <label for="email" class="control-label">{{ 'reservation.email'|trans }}</label>

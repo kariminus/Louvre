@@ -43,16 +43,26 @@ class ReservationController extends controller
 
     public function paiementAction(Request $request)
     {
+        $error = false;
+
         if ($request->isMethod('POST')) {
 
-            $stripePaiement = $this->get('stripe_paiement');
-            $stripePaiement->chargePaiement($request);
+            try {
+                $stripePaiement = $this->get('stripe_paiement');
+                $stripePaiement->chargePaiement($request);
+            }
+            catch (\Stripe\Error\Card $e) {
+                    $error = 'Un problème lors du paiment est survenu :'.$e->getMessage();
+            }
 
-            return $this->redirectToRoute('oc_platform_confirmation');
+            if (!$error) {
+                return $this->redirectToRoute('oc_platform_confirmation');
+            }
         }
 
         return $this->render('OCPlatformBundle:Reservation:paiement.html.twig', array(
-            'stripe_public_key' => $this->getParameter('stripe_public_key')
+            'stripe_public_key' => $this->getParameter('stripe_public_key'),
+            'error' => $error
         ));
 
     }

@@ -22,10 +22,10 @@ class SendMail
 
     public function sendNewMail(Reservation $reservation)
     {
-        $number= $reservation->getId();
-        $date= $reservation->getDate();
-        $price= $reservation->getPrice();
-        $visitors= $reservation->getVisitors();
+        $number = $reservation->getId();
+        $date = $reservation->getDate();
+        $price = $reservation->getPrice();
+        $visitors = $reservation->getVisitors();
 
         $body = $this->renderTemplate($reservation);
 

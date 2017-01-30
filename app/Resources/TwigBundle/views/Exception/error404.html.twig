@@ -1,0 +1,17 @@
+{% extends "OCPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+    Erreur 404 - {{ parent() }}
+{% endblock %}
+
+{% block h1 %}
+    <h1 class="text-center"> Page introuvable </h1>
+{% endblock %}
+
+{% block ocplatform_body %}
+    <div class="col-md-3"></div>
+    <div class="col-md-6 text-center">
+        <p>La page demandée n'a pas pu être retrouvée. Vérifiez l'URL ou <a href="{{ path('oc_platform_index') }}">retournez à l'accueil</a>.</p>
+
+    </div>
+{% endblock %}
